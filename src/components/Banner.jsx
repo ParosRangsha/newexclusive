@@ -15,7 +15,7 @@ const Banner = () => {
         setCategory([...new Set(info.map((item) => item.category))]);
     },[info])
     var banslider = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
@@ -28,11 +28,11 @@ const Banner = () => {
         <Container>
             <div className="flex">
                 <div className="sidemenu py-[40px] pr-2 w-[15%] border-r-[1px]">
-                    <ul className='flex flex-col gap-3'>
-                        <h1 className='font-bold text-[18px]'>Shop by Category</h1>
+                    <h1 className='font-bold text-[18px]'>Shop by Category</h1>
+                    <ul className='flex flex-col py-[20px] h-[500px] overflow-y-scroll'>
                         {
                             category.map((item, i)=>(
-                                <li key={i} className='py-[5px] flex justify-between items-center hover:bg-[#db4444] hover:text-[#fff] duration-[1s] hover:px-[15px] cursor-pointer'>{item.toUpperCase()}<IoIosArrowForward/></li>
+                                <li key={i} className='py-[5px] flex justify-between items-center hover:bg-[#db4444] hover:text-[#fff] duration-[1s] hover:px-[15px] cursor-pointer'>{item.slice(0,10).toUpperCase()}<IoIosArrowForward/></li>
                             ))
                         }
                     </ul>
@@ -52,10 +52,10 @@ const Banner = () => {
                                             <div className="flex items-center gap-3 py-[10px]">
                                                 <Link to='/shop' className='inline-block items-center gap-3 relative after:absolute after:contents-[""] after:h-[3px] after:w-full after:bg-[#fff] after:top-full after:left-0 bg-[#333] hover:bg-[#555] py-[10px] px-[15px] duration-[1s]'>Shop Now </Link> 
                                             </div>
-                                            <p className='text-justify'>{item.description}</p>
+                                            <p className='text-justify h-[100px]'>{item.description}</p>
                                         </div>
                                         <div className="thumb w-1/2 p-[48px]">
-                                            <img src={item.thumbnail} alt="" />
+                                            <img src={item.thumbnail} alt="" className="w-full"/>
                                         </div>
                                     </div>
                                 </div>
