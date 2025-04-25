@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       maxWidth:{
-        container: '1320px'
+        container: '1240px'
       }
     },
   },

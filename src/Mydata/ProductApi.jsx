@@ -4,7 +4,7 @@ let Apidata = createContext()
 const ProductApi = ({children}) => {
     let [data, setData] = useState([]);
   let getData = () => {
-    axios.get("https://dummyjson.com/products").then((response) => {
+    axios.get("https://dummyjson.com/products?limit=100").then((response) => {
       setData(response.data.products);
     });
   };
