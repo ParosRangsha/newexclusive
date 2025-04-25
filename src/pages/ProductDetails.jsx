@@ -14,12 +14,19 @@ const ProductDetails = () => {
     useEffect(() => {
         singleData();
     }, [productId]);    
-    
   return (
     <div className="details">
         <Container>
-            <div className="">
-                <img src={singleProduct.thumbnail} alt={singleProduct.title} />
+            <div className="flex">
+                <div className="photos w-[15%]">
+                    <div className="item w-[50px]">
+                        {
+                            
+                        }
+                    </div>
+                </div>
+                <div className="bigthumb w-[45%]">2</div>
+                <div className="txt w-[40%]">3</div>
             </div>
         </Container>
     </div>
