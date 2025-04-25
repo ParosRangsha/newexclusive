@@ -5,6 +5,7 @@ import { Apidata } from '../Mydata/ProductApi'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
+import {Link} from 'react-router-dom'
 
 const Categories = () => {
     let info = useContext(Apidata)
@@ -30,7 +31,9 @@ const Categories = () => {
                         {
                             category.map((item, i)=>(
                                 <div className='px-[10px]'>
-                                    <p className='font-bold text-[28px] py-[48px] rounded-[10px] text-center bg-[#fff] border-[1px] border-[#db4444] hover:bg-[#db4444] text-[#db4444] hover:text-[#fff] duration-[1s] cursor-pointer'>{item.slice(0,15).toUpperCase()}</p>
+                                    <Link to="/shop">
+                                        <p className='font-bold text-[28px] py-[48px] rounded-[10px] text-center bg-[#fff] border-[1px] border-[#db4444] hover:bg-[#db4444] text-[#db4444] hover:text-[#fff] duration-[1s] cursor-pointer'>{item.slice(0,15).toUpperCase()}</p>
+                                    </Link>
                                 </div>
                             ))
                         }

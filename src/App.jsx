@@ -3,6 +3,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import Home from './pages/Home'
 import Layout from './components/Layout'
 import Errorpage from './pages/Errorpage'
+import ProductDetails from './pages/ProductDetails'
 import Contact from './pages/Contact'
 import About from './pages/About'
 import Register from './pages/Register'
@@ -18,6 +19,7 @@ function App({cap}) {
         <Route path='/about' element={<About/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/shop' element={<Shop/>}/>
+        <Route path='/shop/:id' element={<ProductDetails/>}/>
       </Route>
       <Route path='*' element={<Errorpage/>}/>
       

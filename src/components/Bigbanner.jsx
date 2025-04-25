@@ -30,7 +30,7 @@ const Bigbanner = () => {
                                 </div>
                                 <p className="text-justify py-[20px]">{item.description}</p>
                                 <Timer duration={3 * 24 * 60 * 60 * 1000} />
-                                <Link to="/shop" className="inline-block py-[15px] px-[30px] bg-[#aa0] rounded-[5px]">Buy Now</Link>
+                                <Link to={`/shop/${item.id}`} className="inline-block py-[15px] px-[30px] bg-[#aa0] rounded-[5px]">Buy Now</Link>
                             </div>
                             <div className="thumb w-1/2 p-[48px]">
                                 <img src={item.thumbnail} alt={item.title}/>
