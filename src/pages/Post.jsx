@@ -20,10 +20,10 @@ const Post = () => {
 
                 </div>
                 :
-                <div className="">
+                <div className="flex flex-wrap">
                 {
                     info.map((item, i)=>(
-                        <div className="items 1/4">
+                        <div className="items w-1/4 px-[5px] py-[20px]">
                             <div className="thumb p-[12px] relative bg-[#ddd] group">
                                 <img src={item.thumbnail} alt="" />
                                 <div className="offer absolute top-[12px] left-[12px] py-[4px] px-[12px] bg-[#DB4444] text-[#fff] rounded-[5px]">
