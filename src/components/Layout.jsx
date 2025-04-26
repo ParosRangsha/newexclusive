@@ -4,7 +4,7 @@ import { data, Outlet } from 'react-router-dom'
 import Footer from './Footer'
 
 const Layout = () => {
-  let [viewproject, setviewproject] = useState(true)
+  let [viewproject, setviewproject] = useState(false)
   let dataInp = (res)=>{
     if(res.target.value == 998){
       setviewproject(false)

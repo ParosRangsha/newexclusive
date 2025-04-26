@@ -35,8 +35,8 @@ const Todaycollection = () => {
                     <Slider {...todaySlider}>
                         {
                             info.map((item, i)=>(
-                                <div className="p-[10px]">
-                                    <div className="items w-full" key={i}>
+                                <div className="p-[10px]" key={i}>
+                                    <div className="items w-full">
                                         <div className="thumb p-[12px] relative bg-[#ddd] group">
                                             <img src={item.thumbnail} alt="" />
                                             <div className="offer absolute top-[12px] left-[12px] py-[4px] px-[12px] bg-[#DB4444] text-[#fff] rounded-[5px]">
