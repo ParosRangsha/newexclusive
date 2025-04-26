@@ -11,6 +11,7 @@ const ProductDetails = () => {
             setSingleProduct(response.data);
         });
     };
+    
     useEffect(() => {
         singleData();
     }, [productId]);    
@@ -20,9 +21,7 @@ const ProductDetails = () => {
             <div className="flex">
                 <div className="photos w-[15%]">
                     <div className="item w-[50px]">
-                        {
-                            
-                        }
+                        <p>1</p>
                     </div>
                 </div>
                 <div className="bigthumb w-[45%]">2</div>
