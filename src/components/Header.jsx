@@ -1,12 +1,27 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Container from './Container'
 import { FaSearch, FaRegHeart  } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
+import { Apidata } from '../Mydata/ProductApi';
 
 
 const Header = () => {
+    let info = useContext(Apidata)
     let [myMenu, setMyMenu] = useState(['Home', 'Shop', 'Contact', 'About', 'Register'])
+    let [searchVal, setSearchVal] = useState('')
+    let [searchShow, setSearchShow] = useState([])
+
+    let handleSearch = (e) => {
+        setSearchVal(e.target.value);
+        if(e.target.value == ""){
+            setSearchShow([])
+        }else{
+          let searchOne = info.filter((item)=>item.title.toLowerCase().includes(e.target.value.toLowerCase()))
+          setSearchShow(searchOne);
+        }
+    };
+    console.log(searchShow)
   return (
     <div className="header sticky top-0 w-full left-0 bg-[#fff] z-[999]">
         <div className="noticeboard w-full bg-[#000] text-[#fff] py-[15px] flex items-center">
@@ -39,8 +54,22 @@ const Header = () => {
                 </div>
                 <div className="icons flex items-center gap-3">
                     <div className="search relative">
-                        <input type="text" placeholder='What are you looking for?' className='p-[10px] bg-[#f5f5f5] rounded-[5px]'/>
+                        <input onChange={handleSearch} type="text" placeholder='What are you looking for?' className='p-[10px] bg-[#f5f5f5] rounded-[5px]'/>
                         <FaSearch className='absolute right-[10px] top-[50%] translate-y-[-50%]'/>
+                        <div className={`${searchShow.length > 0 ? 'block': 'hidden'} popup w-full absolute top-[100%] left-0 bg-[#db4444] overflow-y-scroll h-[350px] `}>
+                            <ul>
+                                {
+                                    searchShow.map((item, i)=>(
+                                        <li key={i}>
+                                            <Link to={`/shop/${item.id}`} className='flex items-center my-[5px] px-[5px] hover:bg-[#ddd]'>
+                                                <img src={item.thumbnail} alt={item.title} className='h-[30px] w-[30px]'/>
+                                                <p>{item.title.slice(0,20)}</p>
+                                            </Link>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
                     </div>
                     <FaRegHeart />
                     <IoCartOutline/>
