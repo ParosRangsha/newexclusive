@@ -1,8 +1,47 @@
 import React from 'react'
+import { useState } from 'react';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const Register = () => {
+  const auth = getAuth();
+  let [email, setEmail] = useState('')
+  let [password, setPassword] = useState('')
+
+  let handleEmail = (e)=>{
+    setEmail(e.target.value)
+  }
+  let handlePassword = (e)=>{
+    setPassword(e.target.value)
+  }
+  let handleSubmit = ()=>{
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      console.log('giyeche');
+      
+    })
+    .catch((error) => {
+      console.log('painai');
+      
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+    });
+  }
   return (
-    <div>Register </div>
+    <div className="flex items-center justify-center bg-gray-100 py-[48px]">
+      <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md" >
+        <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
+        <div className="mb-4">
+          <label className="block text-gray-700 mb-2" htmlFor="email">Email</label>
+          <input onChange={handleEmail} type="email" id="email" name="email" className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+        </div>
+        <div className="mb-4">
+          <label className="block text-gray-700 mb-2" htmlFor="password">Password</label>
+          <input onChange={handlePassword} type="password" id="password" name="password" className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+        </div>
+        <button onClick={handleSubmit} type="submit" className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors">Register</button>
+      </div>
+    </div>
   )
 }
 

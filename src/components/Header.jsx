@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import Container from './Container'
 import { FaSearch, FaRegHeart  } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Apidata } from '../Mydata/ProductApi';
 
 
@@ -45,9 +45,9 @@ const Header = () => {
                     <ul className='flex justify-between'>
                         {
                             myMenu.map((item, i)=>(
-                                <li key={i}>
-                                  <Link to={`/${item}`}  className='px-[15px] py-[10px] cursor-pointer hover:bg-[#f5f5f5] duration-[1s] relative after:absolute after:contents-[""] after:h-[5px] after:w-0 after:bg-[#f00] after:left-0 after:bottom-0 after:opacity-0 hover:after:opacity-[100%] after:duration-[1s] hover:after:w-full'>{item}</Link>
-                                </li>
+                                <NavLink key={i} to={`/${item}`} className={({isActive})=> isActive ? 'bg-[#db4444] px-[15px] py-[10px] cursor-pointer hover:bg-[#f5f5f5] duration-[1s] relative after:absolute after:contents-[""] after:h-[5px] after:w-0 after:bg-[#f00] after:left-0 after:bottom-0 after:opacity-0 hover:after:opacity-[100%] after:duration-[1s] hover:after:w-full' : 'bg-[#fff] px-[15px] py-[10px] cursor-pointer hover:bg-[#f5f5f5] duration-[1s] relative after:absolute after:contents-[""] after:h-[5px] after:w-0 after:bg-[#f00] after:left-0 after:bottom-0 after:opacity-0 hover:after:opacity-[100%] after:duration-[1s] hover:after:w-full'}>
+                                    {item}
+                                </NavLink>
                             ))
                         }
                     </ul>
