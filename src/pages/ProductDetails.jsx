@@ -42,7 +42,7 @@ const ProductDetails = () => {
         toast("Item successfuly added!");
         setTimeout(() => {
         navigate("/cart");
-        }, 3000);
+        }, 1500);
         
 
     };
