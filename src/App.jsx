@@ -9,6 +9,7 @@ import About from './pages/About'
 import Register from './pages/Register'
 import Shop from './pages/Shop'
 import Login from './pages/Login'
+import Cart from './pages/Cart'
 
 function App({cap}) {
   let multipage = createBrowserRouter(createRoutesFromElements(
@@ -21,6 +22,7 @@ function App({cap}) {
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/shop' element={<Shop/>}/>
+        <Route path='/cart' element={<Cart/>}/>
         <Route path='/shop/:id' element={<ProductDetails/>}/>
       </Route>
       <Route path='*' element={<Errorpage/>}/>

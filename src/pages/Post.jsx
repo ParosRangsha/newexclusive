@@ -66,7 +66,11 @@ const Post = ({showData, allapge}) => {
                       <BiShow />
                     </Link>
                   </div>
-                  <div className="addtocart absolute bottom-0 left-0 w-full scale-0 group-hover:scale-[100%] duration-[1s] bg-[#000] text-[#fff] py-[10px]">
+                  <ToastContainer />
+                  <div
+                    onClick={handleCart}
+                    className="addtocart absolute bottom-0 left-0 w-full scale-0 group-hover:scale-[100%] duration-[1s] bg-[#000] text-[#fff] py-[10px]"
+                  >
                     <p className="text-center">Add To Cart</p>
                   </div>
                 </div>
