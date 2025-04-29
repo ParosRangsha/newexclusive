@@ -8,7 +8,7 @@ import { Apidata } from '../Mydata/ProductApi';
 
 const Header = () => {
     let info = useContext(Apidata)
-    let [myMenu, setMyMenu] = useState(['Home', 'Shop', 'Contact', 'About', 'Register'])
+    let [myMenu, setMyMenu] = useState(['Home', 'Shop', 'Contact', 'About', 'Register', 'Login'])
     let [searchVal, setSearchVal] = useState('')
     let [searchShow, setSearchShow] = useState([])
 
