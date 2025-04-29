@@ -102,12 +102,14 @@ const Header = () => {
             </div>
             <FaRegHeart />
             <div className="relative">
-                {
-                    cartdata.length > 0 &&
-                    <div className="absolute flex justify-center items-center top-[-60%] right-[-60%] bg-[#db4444] h-[15px] w-[15px] rounded-[50%] text-[8px]">{cartdata.length}</div>
-
-                }
-              <IoCartOutline />
+              {cartdata.length > 0 && (
+                <div className="absolute flex justify-center items-center top-[-60%] right-[-60%] bg-[#db4444] h-[15px] w-[15px] rounded-[50%] text-[8px]">
+                  {cartdata.length}
+                </div>
+              )}
+              <Link to='/cart'>
+                <IoCartOutline />
+              </Link>
             </div>
           </div>
         </div>

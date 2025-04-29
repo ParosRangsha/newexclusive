@@ -8,13 +8,6 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Post = ({showData, allapge}) => {
     let info = useContext(Apidata)
-    let navigate = useNavigate()
-    let handleCart = ()=>{
-        toast('hello')
-        setTimeout(() => {
-            navigate("/cart");
-        }, 3000);
-    }
   return (
     <div>
       <div className="heading w-full bg-[#db4444] py-[10px]">a</div>
@@ -24,7 +17,9 @@ const Post = ({showData, allapge}) => {
             {showData.map((item, i) => (
               <div className="items w-1/4 px-[5px] py-[20px]">
                 <div className="thumb p-[12px] relative bg-[#ddd] group">
-                  <img src={item.thumbnail} alt="" />
+                  <Link to={`/shop/${item.id}`}>
+                    <img src={item.thumbnail} alt="" />
+                  </Link>
                   <div className="offer absolute top-[12px] left-[12px] py-[4px] px-[12px] bg-[#DB4444] text-[#fff] rounded-[5px]">
                     <p>-{Math.floor(item.discountPercentage)}%</p>
                   </div>
@@ -35,12 +30,6 @@ const Post = ({showData, allapge}) => {
                     </Link>
                   </div>
                   <ToastContainer />
-                  <div
-                    onClick={handleCart}
-                    className="addtocart absolute bottom-0 left-0 w-full scale-0 group-hover:scale-[100%] duration-[1s] bg-[#000] text-[#fff] py-[10px]"
-                  >
-                    <p className="text-center">Add To Cart</p>
-                  </div>
                 </div>
                 <div className="txt py-[5px]">
                   <p className="font-bold text-[18px]">
@@ -56,7 +45,9 @@ const Post = ({showData, allapge}) => {
             {allapge.map((item, i) => (
               <div className="items w-1/4 px-[5px] py-[20px]" key={i}>
                 <div className="thumb p-[12px] relative bg-[#ddd] group">
-                  <img src={item.thumbnail} alt="" />
+                  <Link to={`/shop/${item.id}`}>
+                    <img src={item.thumbnail} alt="" />
+                  </Link>
                   <div className="offer absolute top-[12px] left-[12px] py-[4px] px-[12px] bg-[#DB4444] text-[#fff] rounded-[5px]">
                     <p>-{Math.floor(item.discountPercentage)}%</p>
                   </div>
@@ -67,12 +58,6 @@ const Post = ({showData, allapge}) => {
                     </Link>
                   </div>
                   <ToastContainer />
-                  <div
-                    onClick={handleCart}
-                    className="addtocart absolute bottom-0 left-0 w-full scale-0 group-hover:scale-[100%] duration-[1s] bg-[#000] text-[#fff] py-[10px]"
-                  >
-                    <p className="text-center">Add To Cart</p>
-                  </div>
                 </div>
                 <div className="txt py-[5px]">
                   <p className="font-bold text-[18px]">

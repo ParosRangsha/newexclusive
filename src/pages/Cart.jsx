@@ -22,7 +22,7 @@ const Cart = () => {
               </li>
             ))}
           </ul>
-          <ul className="w-full h-[500px] overflow-y-scroll">
+          <ul className="w-full h-[250px] overflow-y-scroll">
             {data.map((item, i) => (
               <li key={i} className="w-full flex items-center">
                 <div className={`w-1/${ulhead.length} flex justify-center`}>
@@ -35,7 +35,7 @@ const Cart = () => {
                     className="h-[50px] w-[50px]"
                   />
                 </div>
-                <div className={`w-1/${ulhead.length} flex justify-center`}>
+                <div className={`w-1/${ulhead.length} flex`}>
                   {item.title}
                 </div>
                 <div className={`w-1/${ulhead.length} flex justify-center`}>
