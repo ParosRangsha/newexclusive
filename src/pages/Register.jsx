@@ -7,6 +7,7 @@ const Register = () => {
   const auth = getAuth();
   let [email, setEmail] = useState('')
   let [password, setPassword] = useState('')
+  let [smessage, setSMessage] = useState('')
 
   let handleEmail = (e)=>{
     setEmail(e.target.value)
@@ -17,11 +18,11 @@ const Register = () => {
   let handleSubmit = ()=>{
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      console.log('giyeche');
+      setSMessage('Successfuly create account.')
       
     })
     .catch((error) => {
-      console.log('painai');
+      setSMessage('Cannot create account.')
       
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -29,7 +30,10 @@ const Register = () => {
     });
   }
   return (
-    <div className="flex items-center justify-center bg-gray-100 py-[48px]">
+    <div className="flex flex-col items-center justify-center bg-gray-100 py-[48px]">
+      <div className="">
+        <p className='py-[20px]'>{smessage}</p>
+      </div>
       <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md" >
         <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
         <div className="mb-4">
