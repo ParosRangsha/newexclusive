@@ -21,7 +21,6 @@ const Header = () => {
           setSearchShow(searchOne);
         }
     };
-    console.log(searchShow)
   return (
     <div className="header sticky top-0 w-full left-0 bg-[#fff] z-[999]">
         <div className="noticeboard w-full bg-[#000] text-[#fff] py-[15px] flex items-center">
