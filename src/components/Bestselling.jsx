@@ -42,8 +42,10 @@ const Bestselling = () => {
                             <FaRegHeart/>
                             <Link to={`/shop/${item.id}`}><BiShow/></Link>
                           </div>
-                          <div className="addtocart absolute bottom-0 left-0 w-full scale-0 group-hover:scale-[100%] duration-[1s] bg-[#000] text-[#fff] py-[10px]">
-                            <p className='text-center'>Add To Cart</p>
+                          <div>
+                            <Link to={`/shop/${item.id}`} className="addtocart absolute bottom-0 left-0 w-full scale-0 group-hover:scale-[100%] duration-[1s] bg-[#000] text-[#fff] py-[10px] text-center">
+                              Add To Cart
+                            </Link>
                           </div>
                         </div>
                         <div className="txt py-[5px]">
